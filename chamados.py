@@ -113,23 +113,20 @@ def cadastrar_chamado():
             resposta_adicao = input("Resposta inválida! Responda somente com 'Sim' ou 'Não': ").lower()
 
 def resolver_chamado():
-
     resposta = input("Digite o ID do chamado que você deseja alterar o status: ")
-    
     for cada_item in chamados:
-        if cada_item['id'] == resposta:
+        if str(cada_item['id']) == resposta:
             cada_item['status'] = "Em progresso"
-            print(f"Status de Chamado atualizado para 'Em progresso' com sucesso!")
+            print("Status de chamado atualizado para 'Em progresso' com sucesso!")
             break
-                        
+            
 def fechar_chamado():
     resposta = input("Digite o ID do chamado que você deseja alterar o status: ")
-    
     for cada_item in chamados:
-        if cada_item['id'] == resposta:
+        if str(cada_item['id']) == resposta:
             cada_item['status'] = "Fechado"
-            print(f"Status de chamado atualizado para 'Fechado' com sucesso!")
-        break
+            print("Status de chamado atualizado para 'Fechado' com sucesso!")
+            break
 
 while True:
     print("Histórico de Chamados")
